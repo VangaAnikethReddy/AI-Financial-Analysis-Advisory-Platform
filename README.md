@@ -1,139 +1,218 @@
-# 🏦 SME Financial Health Assessment Tool
+# FinInsight AI
 
-> **Final Year BTech CS Project** — AI-powered financial analysis for small businesses
+## AI-Powered Financial Analysis and Advisory Platform
 
----
+FinInsight AI is a **full-stack web application** designed to analyze financial data and provide intelligent advisory insights for businesses. The platform allows users to upload financial datasets, visualize financial metrics, and receive AI-based recommendations such as loan products suitable for their financial profile.
 
-## ⚡ Quick Setup (5 minutes)
-
-### What you need installed:
-- Python 3.9+ (already installed on your PC)
-- Node.js 18+ → download from https://nodejs.org
-
-**No PostgreSQL needed! Uses SQLite (built into Python)**
+This project was developed as a **B.Tech Computer Science Final Year Major Project**.
 
 ---
 
-### Step 1 — Setup Backend
+# 🚀 Features
 
-Open a terminal in the `backend` folder and run:
+* 🔐 User Authentication (Login / Signup)
+* 📊 Financial Data Upload and Processing
+* 📈 Financial Metrics Dashboard
+* 📉 Interactive Data Visualization
+* 🤖 AI-Based Financial Insights
+* 💰 Loan Product Recommendations
+* 📁 Financial Report Generation
+
+---
+
+# 🏗 System Architecture
+
+Frontend → Backend → Financial Analysis Engine → Database
+
+```
+React Frontend (Port 3000)
+        │
+        ▼
+Python Backend (FastAPI)
+        │
+        ▼
+Financial Analysis Engine
+        │
+        ▼
+SQLite Database
+```
+
+---
+
+# 💻 Tech Stack
+
+### Frontend
+
+* React.js
+* HTML5
+* CSS3
+* JavaScript
+
+### Backend
+
+* Python
+* FastAPI
+
+### Data Processing
+
+* Pandas
+* NumPy
+
+### Database
+
+* SQLite
+
+### Tools
+
+* Git
+* GitHub
+
+---
+
+# 📂 Project Structure
+
+```
+major_project
+│
+├── backend
+│   ├── main.py
+│   ├── requirements.txt
+│   └── financial_health.db
+│
+├── frontend
+│   ├── src
+│   ├── public
+│   └── package.json
+│
+├── screenshots
+│   ├── login.png
+│   ├── dashboard.png
+│   └── loan_products.png
+│
+├── README.md
+└── .gitignore
+```
+
+---
+
+# ⚙️ Installation & Setup
+
+## 1️⃣ Clone the Repository
+
+```
+git clone https://github.com/yourusername/FinInsight-AI.git
+cd FinInsight-AI
+```
+
+---
+
+## 2️⃣ Backend Setup
+
+Navigate to backend folder:
+
+```
+cd backend
+```
+
+Install required Python packages:
 
 ```
 pip install -r requirements.txt
 ```
 
-Then edit the `.env` file and add your Anthropic API key:
-```
-ANTHROPIC_API_KEY=your-key-here
-```
-Get a free key from: https://console.anthropic.com
+Start backend server:
 
-Start the backend:
 ```
-uvicorn main:app --reload
+uvicorn main:app --reload --port 8000
 ```
 
-✅ Backend running at: http://localhost:8000  
-📖 API docs at: http://localhost:8000/docs
+Backend will run on:
+
+```
+http://localhost:8000
+```
 
 ---
 
-### Step 2 — Setup Frontend
+## 3️⃣ Frontend Setup
 
-Open a **new** terminal in the `frontend` folder and run:
+Open another terminal and navigate to frontend folder:
+
+```
+cd frontend
+```
+
+Install dependencies:
 
 ```
 npm install
+```
+
+Start the frontend server:
+
+```
 npm start
 ```
 
-✅ App opens at: http://localhost:3000
-
----
-
-### OR — Just double-click these files:
-- `start_backend.bat` — starts the backend
-- `start_frontend.bat` — starts the frontend
-
----
-
-## 🗄️ Database
-
-Uses **SQLite** — the database file `financial_health.db` is created automatically in the `backend` folder when you first run the app. No setup needed.
-
----
-
-## 📁 Project Structure
+Frontend will run on:
 
 ```
-sme-financial-health/
-├── backend/
-│   ├── main.py           ← FastAPI app entry point
-│   ├── database.py       ← SQLite setup (auto-creates tables)
-│   ├── scoring.py        ← Financial health scoring algorithm
-│   ├── parser.py         ← CSV/XLSX/PDF file parser
-│   ├── ai_service.py     ← Claude AI API integration
-│   ├── recommendations.py ← Loan product matching
-│   ├── routes/
-│   │   ├── auth.py       ← Login/Register
-│   │   ├── upload.py     ← File upload + analysis
-│   │   └── reports.py    ← Report data endpoints
-│   ├── requirements.txt
-│   └── .env              ← Add your API key here
-│
-├── frontend/
-│   └── src/
-│       ├── pages/
-│       │   ├── Login.jsx / Register.jsx
-│       │   ├── Home.jsx      ← Dashboard
-│       │   ├── Upload.jsx    ← File upload
-│       │   ├── Report.jsx    ← Full report with charts
-│       │   └── MyReports.jsx ← All reports list
-│       └── utils/api.js      ← All API calls
-│
-├── data/
-│   └── sample_financial_data.csv  ← Use this to test
-│
-├── start_backend.bat   ← Double-click to start backend
-└── start_frontend.bat  ← Double-click to start frontend
+http://localhost:3000
 ```
 
 ---
 
-## 📊 How Scoring Works
+# ▶️ Running the Application
 
-| Dimension | Weight | Metric |
-|-----------|--------|--------|
-| Profitability | 30% | Net Profit Margin |
-| Revenue Growth | 20% | Year-over-year growth |
-| Expense Control | 20% | Expense/Revenue ratio |
-| Cash Flow | 15% | % months positive |
-| Debt Management | 15% | Debt/Revenue ratio |
+1. Start the backend server
+2. Start the frontend server
+3. Open your browser and go to:
 
-**Score → Risk Level:**
-- 70–100 = 🟢 Low Risk
-- 45–69  = 🟡 Medium Risk
-- 0–44   = 🔴 High Risk
+```
+http://localhost:3000
+```
 
 ---
 
-## 🧪 Test the App
+# 📸 Application Screenshots
 
-Use the sample file: `data/sample_financial_data.csv`
+### 🔐 Login Page
 
-Expected result:
-- Industry: Manufacturing
-- Score: ~74/100
-- Risk: Low Risk
+![Login Page](screenshots/login.png)
 
 ---
 
-## 🤖 AI Features
+### 📊 Financial Analysis Dashboard
 
-If you add an Anthropic API key, you get AI-generated:
-- Financial insights
-- Risk warnings
-- Growth opportunities
-- Cost reduction tips
+![Dashboard](screenshots/dashboard.png)
 
-**No API key?** The system still works using built-in rule-based analysis.
+---
+
+### 💰 Loan Recommendation System
+
+![Loan Products](screenshots/loan_products.png)
+
+---
+
+# 🎯 Use Cases
+
+* Business financial performance analysis
+* Financial advisory for SMEs
+* Loan eligibility insights
+* Educational financial analytics platform
+
+---
+
+# 🎓 Academic Details
+
+Project Title:
+**AI-Powered Financial Analysis and Advisory Platform**
+
+Project Type:
+B.Tech Final Year Major Project
+
+---
+
+# 📄 License
+
+This project is developed for **academic and educational purposes**.
